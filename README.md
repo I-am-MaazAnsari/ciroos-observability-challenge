@@ -34,6 +34,10 @@ GitHub
       ▼
  Grafana
 
+## Architecture Diagram
+
+![Architecture Diagram](docs/architecture.drawio.png)
+
 ## Features
 
 - Infrastructure provisioned using Terraform
