@@ -1,91 +1,202 @@
 # Ciroos Observability Challenge
 
-## Overview
+Production-inspired Kubernetes observability platform built on **Amazon EKS** using **Terraform**, **GitOps (Argo CD)**, **Prometheus**, and **Grafana**.
 
-This project demonstrates a production-inspired Kubernetes observability environment on AWS using Infrastructure as Code and GitOps principles.
+The objective of this project is to demonstrate Infrastructure as Code, GitOps deployment, Kubernetes monitoring, and observability best practices.
 
-## Technologies
+---
 
-- Terraform
-- Amazon EKS
-- Kubernetes
-- Argo CD
-- GitHub
-- Prometheus
-- Grafana
-- NGINX
+# Technology Stack
 
-## Architecture
+| Category | Tools |
+|----------|------|
+| Cloud | AWS |
+| Infrastructure | Terraform |
+| Container Platform | Amazon EKS |
+| Container Runtime | Kubernetes |
+| GitOps | Argo CD |
+| Monitoring | Prometheus |
+| Visualization | Grafana |
+| Sample Application | NGINX |
 
-GitHub
+---
+
+# Architecture
+
+The infrastructure follows a GitOps workflow.
+
+```
+Developer
       │
       ▼
- Argo CD (GitOps)
+ GitHub Repository
       │
       ▼
- Amazon EKS
+    Argo CD
       │
       ▼
- NGINX Application
+ Amazon EKS Cluster
+      │
+      ▼
+ Kubernetes Resources
       │
       ▼
  Prometheus
       │
       ▼
  Grafana
+```
 
 ## Architecture Diagram
 
-![Architecture Diagram](docs/architecture.drawio.png)
+![Architecture](docs/architecture.drawio.png)
 
-## Features
+---
 
-- Infrastructure provisioned using Terraform
-- Kubernetes application deployment
-- GitOps continuous deployment with Argo CD
-- Automatic synchronization from GitHub
-- Prometheus metrics collection
-- Grafana dashboards
-- Declarative Kubernetes manifests
-
-## Repository Structure
+# Repository Structure
 
 ```
-apps/
-  nginx/
-
-terraform/
-  modules/
-    network/
-    eks/
-
-README.md
-high-level-architecture.md
-repository-folder-structure.md
+.
+├── apps/
+│   └── nginx/
+├── terraform/
+├── docs/
+├── screenshots/
+├── README.md
+├── high-level-architecture.md
+└── repository-folder-structure.md
 ```
 
-## Deployment Workflow
+---
+
+# Deployment Workflow
 
 1. Provision AWS infrastructure using Terraform
-2. Deploy EKS cluster
+
+2. Deploy Amazon EKS
+
 3. Install Argo CD
-4. Connect GitHub repository
-5. Deploy NGINX application
+
+4. Connect GitHub Repository
+
+5. Deploy NGINX through GitOps
+
 6. Install kube-prometheus-stack
-7. Monitor application using Prometheus and Grafana
 
-## Validation
+7. Monitor workloads using Prometheus and Grafana
 
-- Application successfully deployed through Argo CD
-- Auto Sync enabled
-- GitOps workflow verified
-- Prometheus targets healthy
-- Grafana dashboards operational
+---
 
-## Future Improvements
+# GitOps Deployment
 
-- Loki for centralized logging
-- Alertmanager
-- Multi-region deployment
-- AWS ALB Ingress Controller
-- WAF integration
+Argo CD continuously watches the GitHub repository.
+
+Any Git commit automatically synchronizes Kubernetes resources inside Amazon EKS.
+
+### Argo CD
+
+![ArgoCD](screenshots/argocd-dashboard.jpg)
+
+---
+
+# Kubernetes Deployment
+
+NGINX application running inside Kubernetes.
+
+### kubectl
+
+![kubectl](screenshots/kubectl-nginx.jpg)
+
+---
+
+# Monitoring
+
+## Prometheus Targets
+
+All monitoring targets are healthy.
+
+![Prometheus](screenshots/prometheus-up-query.jpg)
+
+---
+
+## Grafana Dashboard
+
+Cluster monitoring dashboard.
+
+![Grafana](screenshots/grafana-dashboard.jpg)
+
+---
+
+## Kubernetes Namespace Dashboard
+
+Resource utilization of deployed workloads.
+
+![Namespace Dashboard](screenshots/grafana-namespace-dashboard.jpg)
+
+---
+
+# EKS Cluster
+
+Worker nodes running successfully.
+
+![EKS Nodes](screenshots/eks-nodes.jpg)
+
+---
+
+# GitHub Repository
+
+Source code managed using Git.
+
+![Repository](screenshots/github-repository.jpg)
+
+---
+
+# Validation
+
+The following components were successfully validated.
+
+- Terraform infrastructure deployment
+
+- Amazon EKS cluster
+
+- Kubernetes application deployment
+
+- GitOps synchronization
+
+- Prometheus metrics collection
+
+- Grafana dashboards
+
+- Kubernetes service discovery
+
+- Automatic reconciliation using Argo CD
+
+---
+
+# Future Improvements
+
+- AWS Load Balancer Controller
+
+- AWS WAF Integration
+
+- Loki Log Aggregation
+
+- Alertmanager Notifications
+
+- Multi-region EKS Deployment
+
+- Centralized Logging
+
+- Distributed Tracing
+
+- Chaos Engineering
+
+---
+
+# Author
+
+**Mohd. Maaz Ansari**
+
+DevOps Engineer
+
+AWS • Kubernetes • Terraform • GitOps • Prometheus • Grafana
