@@ -1,0 +1,59 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+terraform.tfstate.d/
+*.tfvars
+*.tfvars.json
+
+# Kubernetes
+kubeconfig
+*.kubeconfig
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Sensitive data
+secrets/
+*.pem
+*.key
+*.cert
+
+# Temporary files
+tmp/
+temp/
+
+# Helm
+*.tgz
+
+# Screenshots (keep only source)
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# Backup files
+*.bak
+*.backup
