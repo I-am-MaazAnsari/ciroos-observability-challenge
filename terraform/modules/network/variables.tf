@@ -59,3 +59,8 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "admin_ip" {
+  description = "Administrator public IP address allowed to access EKS API and SSH"
+  type        = string
+}

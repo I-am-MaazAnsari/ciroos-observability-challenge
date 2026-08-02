@@ -5,9 +5,10 @@ module "network" {
   environment = var.environment
   project     = var.project_name
 
+  admin_ip = var.admin_ip
+
   enable_nat_gateway = true
 }
-
 module "eks" {
   source = "./modules/eks"
 

@@ -13,3 +13,7 @@ variable "project_name" {
   type        = string
   default     = "ciroos-observability"
 }
+variable "admin_ip" {
+  description = "Administrator public IPv4 address"
+  type        = string
+}
