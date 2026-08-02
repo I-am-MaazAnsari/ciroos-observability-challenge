@@ -48,11 +48,17 @@ temp/
 # Helm
 *.tgz
 
-# Screenshots (keep only source)
+# Ignore images everywhere...
 *.png
 *.jpg
 *.jpeg
 *.gif
+
+# ...except screenshots used in documentation
+!screenshots/
+!screenshots/*.png
+!screenshots/*.jpg
+!screenshots/*.jpeg
 
 # Backup files
 *.bak
