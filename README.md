@@ -1,73 +1,87 @@
 # Ciroos Observability Challenge
 
 ## Overview
-Production-quality AWS observability environment for interview assignment.
+
+This project demonstrates a production-inspired Kubernetes observability environment on AWS using Infrastructure as Code and GitOps principles.
+
+## Technologies
+
+- Terraform
+- Amazon EKS
+- Kubernetes
+- Argo CD
+- GitHub
+- Prometheus
+- Grafana
+- NGINX
 
 ## Architecture
-- Two Amazon EKS clusters across two AWS regions
-- Private communication between services using VPC Peering
-- AWS ALB with WAF protection
-- Infrastructure as Code using Terraform
-- Kubernetes deployments with Helm-based observability stack
-- Prometheus, Grafana, Loki, and Alerting
-- Python verification tool
-- Fault injection capabilities
-- Root Cause Analysis documentation
 
-## Quick Start
-1. Clone repository
-2. Review architecture in `docs/architecture.md`
-3. Follow implementation plan in `docs/implementation-plan.md`
+GitHub
+      │
+      ▼
+ Argo CD (GitOps)
+      │
+      ▼
+ Amazon EKS
+      │
+      ▼
+ NGINX Application
+      │
+      ▼
+ Prometheus
+      │
+      ▼
+ Grafana
 
-## Directory Structure
+## Features
+
+- Infrastructure provisioned using Terraform
+- Kubernetes application deployment
+- GitOps continuous deployment with Argo CD
+- Automatic synchronization from GitHub
+- Prometheus metrics collection
+- Grafana dashboards
+- Declarative Kubernetes manifests
+
+## Repository Structure
+
 ```
-ciroos-observability-challenge/
-├── README.md
-├── .gitignore
-├── docs/
-│   ├── architecture.md
-│   ├── implementation-plan.md
-│
-├── terraform/
-│   ├── modules/
-│   │   ├── network/
-│   │   ├── eks/
-│   │   ├── alb/
-│   │   ├── waf/
-│   │
-│   ├── environments/
-│   │   ├── us-east-1/
-│   │   └── us-west-2/
-│   │
-│   └── backend/
-│
-├── kubernetes/
-│   ├── frontend/
-│   ├── inventory/
-│   ├── ingress/
-│
-├── observability/
-│   ├── prometheus/
-│   ├── grafana/
-│   ├── loki/
-│   └── alerts/
-│
-├── python/
-│   └── verification/
-│
-├── faults/
-│
-├── rca/
-│
-└── screenshots/
+apps/
+  nginx/
+
+terraform/
+  modules/
+    network/
+    eks/
+
+README.md
+high-level-architecture.md
+repository-folder-structure.md
 ```
 
-## Prerequisites
-- AWS Account with appropriate permissions
-- Terraform v1.5+
-- kubectl
-- Helm
-- Python 3.9+
+## Deployment Workflow
 
-## Next Steps
-Refer to the implementation plan for detailed setup instructions.
+1. Provision AWS infrastructure using Terraform
+2. Deploy EKS cluster
+3. Install Argo CD
+4. Connect GitHub repository
+5. Deploy NGINX application
+6. Install kube-prometheus-stack
+7. Monitor application using Prometheus and Grafana
+
+## Validation
+
+- Application successfully deployed through Argo CD
+- Auto Sync enabled
+- GitOps workflow verified
+- Prometheus targets healthy
+- Grafana dashboards operational
+
+## Future Improvements
+
+- Loki for centralized logging
+- Alertmanager
+- Multi-region deployment
+- AWS ALB Ingress Controller
+- WAF integration
