@@ -61,7 +61,7 @@ variable "cluster_endpoint_public_access_cidrs" {
   description = "List of CIDR blocks that can access the public endpoint"
   type        = list(string)
   default = [
-    "183.83.155.227/32"
+    "183.83.152.125/32"
   ]
 }
 variable "cluster_endpoint_private_access" {

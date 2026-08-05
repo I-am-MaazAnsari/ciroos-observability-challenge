@@ -69,6 +69,16 @@ Developer
 
 ---
 
+# Documentation
+
+| Document | Description |
+|----------|-------------|
+| [High-Level Architecture](high-level-architecture.md) | AWS and Kubernetes architecture overview |
+| [Repository Structure](repository-folder-structure.md) | Project folder organization |
+| [Terraform Outputs](docs/terraform-outputs.md) | Infrastructure outputs after deployment |
+| [Troubleshooting](docs/troubleshooting.md) | Common issues encountered and their resolutions |
+| [Lessons Learned](docs/lessons-learned.md) | Key takeaways from the project |
+
 # Deployment Workflow
 
 1. Provision AWS infrastructure using Terraform
